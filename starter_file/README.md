@@ -7,6 +7,8 @@ Heart failure, often stemming from cardiovascular diseases, is a prevalent condi
 
 ## Dataset
 The heart failure dataset (available at https://www.kaggle.com/datasets/andrewmvd/heart-failure-clinical-data) includes the following columns: age, anaemia, creatinine phosphokinase, diabetes, ejection fraction, high blood pressure, platelets, serum creatinine, serum sodium, sex, smoking, time, and DEATH_EVENT. It comprises medical records from 299 patients diagnosed with heart failure.
+
+We have uploaded heart failure dataset in Tabular form.
 ![alt text](image-1.png)
 ![alt text](image.png)
 ![alt text](image-2.png)
@@ -26,11 +28,16 @@ Experiment Timeout ("experiment_timeout_minutes": 18): This sets a maximum durat
 Max Concurrent Iterations ("max_concurrent_iterations": 5): This specifies the maximum number of model training iterations that can run simultaneously. By allowing up to 5 iterations concurrently, the experiment can utilize available computational resources effectively, potentially speeding up the overall process.
 
 These adjustments simplify the technical terms while retaining the core meaning and purpose of each parameter in the context of AutoML experimentation for predicting the "DEATH_EVENT" in a dataset.
+
+We can see the autoML config that we have set. Now,I am running the auto ml job using above automl config. 
 ![alt text](image-12.png)
+We can see the run details over here.
 ![alt text](image-13.png)
+Now our run is complete and we can see the best model.
 ![alt text](image-14.png)
 ![alt text](image-15.png)
 ![alt text](image-16.png)
+We can see the parameters that we have using Automl run.
 ![alt text](image-17.png)
 
 ### Results
@@ -59,10 +66,14 @@ evaluation_interval: Specifies how often (in terms of number of iterations) the 
 slack_factor: This sets the tolerance level for how much worse a run can perform relative to the best run before being terminated. A slack_factor of 0.2 means that a run can perform up to 20% worse than the best performing run before it is stopped.
 
 In this project we used Gradient boosting as it builds an ensemble of trees sequentially, where each tree tries to correct the errors of the previous one. This iterative process often results in high predictive accuracy.  It is especially useful when you need a model that can capture complex patterns in the data while still being interpretable and customizable.
+
+
 ![alt text](image-10.png)
+We can see the best model that we got through hyper parameter tuning.
 ![alt text](image-11.png)
+We can see the job completed successfully.
 ![alt text](image-18.png)
-![alt text](image-19.png)
+
 ### Results
 Best Model Run ID: HD_15e83d28-d264-44e2-b7db-3393e1c887b8_9
 
@@ -92,9 +103,14 @@ data =  {
     }
   ]
 }
+
+Now we are deploying the best model 
 ![alt text](image-6.png)
+We can see that "Application insights enabled" was false first but then we can ran the mext cell where we are setting it as true.
 ![alt text](image-7.png)
+Now we can that our endpoint is in healthy state.
 ![alt text](image-8.png)
+Here we are checking by giving inputs to that file and we can the output that person will die.
 ![alt text](image-9.png)
 ![alt text](image-20.png)
 
@@ -104,5 +120,9 @@ output - b'[1]'
 https://drive.google.com/file/d/1hZ6f3pUjYcNDRP8LuwzlYvnTeNF6KapZ/view?usp=sharing
 
 ## Cluster and service delete
+We can see the cluster is getting deleted.
 ![alt text](image-3.png)
 ![alt text](image-4.png)
+
+## Overview of how to improve the project in the future
+There should be more lessons on theory as well. There should be more limit on using azure workspaces so that an individual try out some other things as well.
