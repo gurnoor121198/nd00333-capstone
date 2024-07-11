@@ -37,7 +37,7 @@ Now our run is complete and we can see the best model.
 ![alt text](image-14.png)
 ![alt text](image-15.png)
 ![alt text](image-16.png)
-We can see the parameters that we have using Automl run.
+We can see the parameters that we have got using Automl run. This is best model that I are going to deploy
 ![alt text](image-17.png)
 
 ### Results
@@ -71,7 +71,7 @@ In this project we used Gradient boosting as it builds an ensemble of trees sequ
 ![alt text](image-10.png)
 We can see the best model that we got through hyper parameter tuning.
 ![alt text](image-11.png)
-We can see the job completed successfully.
+We can see the job completed successfully. It took around 12 minutes for the job to finish.
 ![alt text](image-18.png)
 
 ### Results
@@ -82,6 +82,7 @@ Best Model Metrics: {'Learning Rate:': 0.75, 'Number Estimators:': 7, 'Accuracy'
 Best Model Accuracy: 0.7666666666666667
 
 ## Model Deployment
+We got an accuray of 76.67% using hyper parameter tuning but with auto ml we got 89.3%. The performance of Automl is way better than hyper parameter tuning.
 We deployed the best model from the AutoML experiment as a web service endpoint and tested it with three randomly chosen samples from the dataset.
 url= 'http://6dd7cb43-96ce-4ace-93ed-5fb8e2ef9555.westeurope.azurecontainer.io/score'
 
@@ -106,11 +107,11 @@ data =  {
 
 Now we are deploying the best model 
 ![alt text](image-6.png)
-We can see that "Application insights enabled" was false first but then we can ran the mext cell where we are setting it as true.
+We can see that "Application insights enabled" was false first but then we can ran the next cell where we are setting it as true.
 ![alt text](image-7.png)
-Now we can that our endpoint is in healthy state.
+Now we can that our endpoint is in healthy state. Earlier it was in a transitioning state.
 ![alt text](image-8.png)
-Here we are checking by giving inputs to that file and we can the output that person will die.
+Here we are checking by giving inputs to that file and we can see the output that person will die.
 ![alt text](image-9.png)
 ![alt text](image-20.png)
 
@@ -125,4 +126,4 @@ We can see the cluster is getting deleted.
 ![alt text](image-4.png)
 
 ## Overview of how to improve the project in the future
-There should be more lessons on theory as well. There should be given more time for using azure workspaces so that an individual try out some other things as well.
+To a large degree, efforts were made in AutoML to enhance cross-validation and mitigate the effects of imbalanced data. However, these methods were not included in the hyperdrive run.Using SMOTE to address imbalanced data might have improved the AUC score. Random Forest could have been used as an alternative approach.
