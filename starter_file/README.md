@@ -125,4 +125,4 @@ We can see the cluster is getting deleted.
 ![alt text](image-4.png)
 
 ## Overview of how to improve the project in the future
-There should be more lessons on theory as well. There should be more limit on using azure workspaces so that an individual try out some other things as well.
+There should be more lessons on theory as well. There should be given more time for using azure workspaces so that an individual try out some other things as well.
